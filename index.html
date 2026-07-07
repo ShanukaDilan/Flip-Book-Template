@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>12th SSLSAS 2026 | Symposium Launch</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800&display=swap"
+		rel="stylesheet">
+	<style>
+		:root {
+			--cream: #efdec1;
+			--cream-2: #e6cfa4;
+			--brown-dark: #3a2a23;
+			--brown-mid: #6b3f30;
+			--maroon: #a5342a;
+			--rust: #8a4a38;
+			--gold: #d3a544;
+			--white: #fffaf0;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
+			font-family: 'Poppins', 'Segoe UI', sans-serif;
+		}
+
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: var(--cream);
+			position: relative;
+		}
+
+		/* ambient drifting gradient backdrop */
+		body::before {
+			content: '';
+			position: fixed;
+			inset: -10%;
+			z-index: 0;
+			background:
+				radial-gradient(circle at 92% 6%, rgba(211, 165, 68, 0.55) 0%, rgba(211, 165, 68, 0) 32%),
+				radial-gradient(circle at 100% 0%, rgba(165, 52, 42, 0.35) 0%, rgba(165, 52, 42, 0) 28%),
+				radial-gradient(circle at 4% 96%, rgba(138, 74, 56, 0.4) 0%, rgba(138, 74, 56, 0) 30%),
+				linear-gradient(160deg, var(--cream) 0%, var(--cream-2) 100%);
+			background-size: 160% 160%;
+			animation: bgDrift 16s ease-in-out infinite alternate;
+		}
+
+		@keyframes bgDrift {
+			0% {
+				background-position: 0% 0%, 100% 0%, 0% 100%, 0% 0%;
+			}
+
+			50% {
+				background-position: 15% 20%, 80% 15%, 20% 80%, 10% 10%;
+			}
+
+			100% {
+				background-position: 5% 10%, 90% 5%, 10% 90%, 0% 0%;
+			}
+		}
+
+		/* decorative corner leaves, echoing the poster's autumn palette */
+		.leaf {
+			position: absolute;
+			border-radius: 0 90% 0 90%;
+			opacity: 0.55;
+			filter: blur(0.5px);
+			animation: leafFloat 10s ease-in-out infinite;
+		}
+
+		.leaf--gold {
+			background: linear-gradient(135deg, var(--gold), transparent);
+		}
+
+		.leaf--maroon {
+			background: linear-gradient(135deg, var(--maroon), transparent);
+		}
+
+		.leaf--rust {
+			background: linear-gradient(135deg, var(--rust), transparent);
+		}
+
+		.leaf.tr1 {
+			width: 260px;
+			height: 260px;
+			top: -60px;
+			right: -60px;
+			--base-rot: 20deg;
+			animation-duration: 12s;
+			animation-delay: 0s;
+		}
+
+		.leaf.tr2 {
+			width: 160px;
+			height: 160px;
+			top: 40px;
+			right: 120px;
+			--base-rot: -15deg;
+			animation-duration: 9s;
+			animation-delay: 1.2s;
+		}
+
+		.leaf.bl1 {
+			width: 220px;
+			height: 220px;
+			bottom: -50px;
+			left: -50px;
+			--base-rot: 200deg;
+			animation-duration: 13s;
+			animation-delay: 2.4s;
+		}
+
+		.leaf.bl2 {
+			width: 140px;
+			height: 140px;
+			bottom: 60px;
+			left: 100px;
+			--base-rot: 150deg;
+			animation-duration: 8s;
+			animation-delay: 3.6s;
+		}
+
+		.leaf.tl1 {
+			width: 120px;
+			height: 120px;
+			top: 10%;
+			left: 6%;
+			--base-rot: 60deg;
+			animation-duration: 11s;
+			animation-delay: 0.8s;
+			opacity: 0.35;
+		}
+
+		.leaf.tc1 {
+			width: 90px;
+			height: 90px;
+			top: -20px;
+			left: 42%;
+			--base-rot: 100deg;
+			animation-duration: 10s;
+			animation-delay: 2s;
+			opacity: 0.3;
+		}
+
+		.leaf.ml1 {
+			width: 150px;
+			height: 150px;
+			top: 45%;
+			left: -60px;
+			--base-rot: 300deg;
+			animation-duration: 14s;
+			animation-delay: 1.6s;
+			opacity: 0.4;
+		}
+
+		.leaf.mr1 {
+			width: 110px;
+			height: 110px;
+			top: 60%;
+			right: -30px;
+			--base-rot: 250deg;
+			animation-duration: 10.5s;
+			animation-delay: 3s;
+			opacity: 0.35;
+		}
+
+		.leaf.br1 {
+			width: 190px;
+			height: 190px;
+			bottom: -40px;
+			right: -40px;
+			--base-rot: 130deg;
+			animation-duration: 12.5s;
+			animation-delay: 0.5s;
+			opacity: 0.4;
+		}
+
+		.leaf.bc1 {
+			width: 80px;
+			height: 80px;
+			bottom: 10%;
+			left: 48%;
+			--base-rot: 30deg;
+			animation-duration: 9.5s;
+			animation-delay: 2.8s;
+			opacity: 0.28;
+		}
+
+		.leaf.mid1 {
+			width: 60px;
+			height: 60px;
+			top: 22%;
+			left: 20%;
+			--base-rot: 80deg;
+			animation-duration: 8.5s;
+			animation-delay: 1s;
+			opacity: 0.22;
+		}
+
+		.leaf.mid2 {
+			width: 70px;
+			height: 70px;
+			bottom: 18%;
+			right: 16%;
+			--base-rot: 320deg;
+			animation-duration: 11.5s;
+			animation-delay: 3.4s;
+			opacity: 0.22;
+		}
+
+		@keyframes leafFloat {
+
+			0%,
+			100% {
+				transform: translate(0, 0) rotate(var(--base-rot));
+			}
+
+			50% {
+				transform: translate(-16px, 14px) rotate(calc(var(--base-rot) + 10deg));
+			}
+		}
+
+		.stage {
+			position: relative;
+			z-index: 2;
+			width: min(96vw, 1280px);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		.badge {
+			position: relative;
+			overflow: hidden;
+			background: var(--brown-dark);
+			color: var(--white);
+			border-radius: 50px;
+			padding: 16px 56px;
+			font-weight: 800;
+			font-size: clamp(22px, 3.6vw, 40px);
+			letter-spacing: 1px;
+			box-shadow: 0 10px 24px rgba(58, 42, 35, 0.35), 0 0 0 0 rgba(211, 165, 68, 0.55);
+			margin-bottom: 26px;
+			white-space: nowrap;
+			opacity: 0;
+			animation:
+				badgeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards,
+				badgeGlow 3.5s ease-in-out 1s infinite;
+		}
+
+		.badge::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -70%;
+			width: 35%;
+			height: 100%;
+			background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+			transform: skewX(-20deg);
+			animation: badgeShine 4s ease-in-out 1.2s infinite;
+		}
+
+		.badge small {
+			display: block;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 600;
+			font-size: 0.32em;
+			letter-spacing: 0.5px;
+			margin-top: 6px;
+			color: #f0e2c8;
+			white-space: normal;
+		}
+
+		@keyframes badgeIn {
+			0% {
+				opacity: 0;
+				transform: translateY(-22px) scale(0.9);
+			}
+
+			100% {
+				opacity: 1;
+				transform: translateY(0) scale(1);
+			}
+		}
+
+		@keyframes badgeGlow {
+
+			0%,
+			100% {
+				box-shadow: 0 10px 24px rgba(58, 42, 35, 0.35), 0 0 0 0 rgba(211, 165, 68, 0.45);
+			}
+
+			50% {
+				box-shadow: 0 10px 28px rgba(58, 42, 35, 0.4), 0 0 26px 6px rgba(211, 165, 68, 0.5);
+			}
+		}
+
+		@keyframes badgeShine {
+			0% {
+				left: -70%;
+			}
+
+			35%,
+			100% {
+				left: 130%;
+			}
+		}
+
+		.title {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 6px;
+			color: var(--brown-dark);
+			font-weight: 800;
+			line-height: 1.25;
+			margin: 0 0 10px;
+			width: 100%;
+			opacity: 0;
+			animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+		}
+
+		@keyframes fadeInUp {
+			0% {
+				opacity: 0;
+				transform: translateY(18px);
+			}
+
+			100% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.title .line {
+			white-space: nowrap;
+			font-size: clamp(15px, 3.1vw, 40px);
+		}
+
+		.title .accent {
+			color: var(--maroon);
+			font-weight: 900;
+			white-space: nowrap;
+			font-size: clamp(18px, 3.5vw, 46px);
+		}
+
+		.subtitle {
+			color: var(--rust);
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 600;
+			font-size: clamp(14px, 1.8vw, 19px);
+			margin-bottom: 44px;
+			letter-spacing: 0.8px;
+			opacity: 0;
+			animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+		}
+
+		.launch-btn {
+			position: relative;
+			overflow: hidden;
+			border: none;
+			cursor: pointer;
+			background: linear-gradient(135deg, var(--maroon), #7c231b);
+			color: var(--white);
+			font-family: 'Poppins', sans-serif;
+			font-weight: 700;
+			font-size: clamp(20px, 2.6vw, 28px);
+			letter-spacing: 4px;
+			padding: 24px 90px;
+			min-width: min(70vw, 460px);
+			border-radius: 70px;
+			box-shadow: 0 14px 30px rgba(165, 52, 42, 0.45), inset 0 0 0 3px rgba(255, 255, 255, 0.15);
+			transition: transform 0.28s ease, box-shadow 0.28s ease, letter-spacing 0.28s ease, min-width 0.28s ease, background 0.28s ease;
+			opacity: 0;
+			animation:
+				fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards,
+				btnPulse 2.6s ease-in-out 1.8s infinite;
+		}
+
+		@keyframes btnPulse {
+
+			0%,
+			100% {
+				box-shadow: 0 14px 30px rgba(165, 52, 42, 0.45), inset 0 0 0 3px rgba(255, 255, 255, 0.15);
+			}
+
+			50% {
+				box-shadow: 0 16px 38px rgba(165, 52, 42, 0.6), inset 0 0 0 3px rgba(255, 255, 255, 0.25), 0 0 22px 4px rgba(211, 165, 68, 0.4);
+			}
+		}
+
+		.launch-btn::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -60%;
+			width: 40%;
+			height: 100%;
+			background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+			transform: skewX(-20deg);
+			transition: left 0.6s ease;
+		}
+
+		.launch-btn:hover {
+			transform: translateY(-4px) scale(1.04);
+			min-width: min(74vw, 520px);
+			letter-spacing: 6px;
+			background: linear-gradient(135deg, #c4432f, var(--maroon));
+			box-shadow: 0 22px 46px rgba(165, 52, 42, 0.6), inset 0 0 0 3px rgba(255, 255, 255, 0.28);
+		}
+
+		.launch-btn:hover::before {
+			left: 130%;
+		}
+
+		.launch-btn:active {
+			transform: translateY(-1px) scale(0.99);
+		}
+
+		.hint {
+			margin-top: 20px;
+			color: var(--brown-mid);
+			font-family: 'Montserrat', sans-serif;
+			font-size: 14px;
+			opacity: 0;
+			animation: hintIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+		}
+
+		@keyframes hintIn {
+			0% {
+				opacity: 0;
+				transform: translateY(12px);
+			}
+
+			100% {
+				opacity: 0.85;
+				transform: translateY(0);
+			}
+		}
+
+		/* Countdown */
+		.countdown-wrap {
+			display: none;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+		}
+
+		.countdown-label {
+			color: var(--brown-dark);
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+			letter-spacing: 5px;
+			font-size: clamp(15px, 2vw, 20px);
+			margin-bottom: 30px;
+			text-transform: uppercase;
+		}
+
+		.ring-box {
+			position: relative;
+			width: min(40vw, 300px);
+			height: min(40vw, 300px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.ring-box svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transform: rotate(-90deg);
+		}
+
+		.ring-track {
+			fill: none;
+			stroke: rgba(58, 42, 35, 0.12);
+			stroke-width: 10;
+		}
+
+		.ring-progress {
+			fill: none;
+			stroke: url(#ringGradient);
+			stroke-width: 10;
+			stroke-linecap: round;
+			transition: stroke-dashoffset 1s linear;
+		}
+
+		.countdown-core {
+			width: 74%;
+			height: 74%;
+			border-radius: 50%;
+			background: radial-gradient(circle at 35% 30%, var(--gold), var(--maroon) 72%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0 20px 50px rgba(58, 42, 35, 0.4), inset 0 0 0 6px rgba(255, 255, 255, 0.18);
+		}
+
+		.countdown-number {
+			font-size: clamp(64px, 9vw, 110px);
+			font-weight: 900;
+			color: var(--white);
+			text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+		}
+
+		.pulse {
+			animation: pulse 1s ease-out;
+		}
+
+		@keyframes pulse {
+			0% {
+				transform: scale(0.6);
+				opacity: 0;
+			}
+
+			40% {
+				transform: scale(1.08);
+				opacity: 1;
+			}
+
+			100% {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+
+		/* wide segmented tracker under the ring */
+		.segments {
+			display: flex;
+			gap: 10px;
+			margin-top: 40px;
+			width: min(90vw, 900px);
+		}
+
+		.segment {
+			flex: 1;
+			height: 10px;
+			border-radius: 6px;
+			background: rgba(58, 42, 35, 0.15);
+			overflow: hidden;
+		}
+
+		.segment.filled {
+			background: linear-gradient(90deg, var(--gold), var(--maroon));
+		}
+
+		.countdown-caption {
+			margin-top: 24px;
+			color: var(--brown-mid);
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 600;
+			font-size: clamp(13px, 1.5vw, 16px);
+			letter-spacing: 0.5px;
+		}
+
+		.stage.hidden {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="leaf leaf--gold tr1"></div>
+	<div class="leaf leaf--maroon tr2"></div>
+	<div class="leaf leaf--maroon bl1"></div>
+	<div class="leaf leaf--gold bl2"></div>
+	<div class="leaf leaf--rust tl1"></div>
+	<div class="leaf leaf--gold tc1"></div>
+	<div class="leaf leaf--maroon ml1"></div>
+	<div class="leaf leaf--rust mr1"></div>
+	<div class="leaf leaf--gold br1"></div>
+	<div class="leaf leaf--rust bc1"></div>
+	<div class="leaf leaf--maroon mid1"></div>
+	<div class="leaf leaf--gold mid2"></div>
+
+	<div class="stage" id="intro-stage">
+		<div class="badge">
+			12<sup>TH</sup> SSLSAS 2026
+			<small>Faculty of Social Sciences and Languages &middot; Sabaragamuwa University of Sri Lanka</small>
+		</div>
+		<br>
+		<h1 class="title"><span class="line">Sabaragamuwa Social Sciences and Languages</span><span
+				class="accent">Students' Annual Symposium &ndash; 2026</span></h1>
+		<p class="subtitle">Abstract Book &middot; 07th July 2026
+			<br>
+			<br>
+			<button class="launch-btn" id="launch-btn">LAUNCH</button>
+		</p>
+		<p class="hint">Click to begin the countdown and open the abstract flip book</p>
+	</div>
+
+	<div class="stage countdown-wrap" id="countdown-stage">
+		<div class="countdown-label">Launching the Abstract Book in</div>
+
+		<div class="ring-box">
+			<svg viewBox="0 0 120 120">
+				<defs>
+					<linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+						<stop offset="0%" stop-color="#d3a544" />
+						<stop offset="100%" stop-color="#a5342a" />
+					</linearGradient>
+				</defs>
+				<circle class="ring-track" cx="60" cy="60" r="52"></circle>
+				<circle class="ring-progress" id="ring-progress" cx="60" cy="60" r="52"></circle>
+			</svg>
+			<div class="countdown-core">
+				<div class="countdown-number pulse" id="countdown-number">10</div>
+			</div>
+		</div>
+
+		<div class="segments" id="segments"></div>
+
+		<p class="countdown-caption">Opening the flip book automatically&hellip;</p>
+	</div>
+
+	<script>
+		var introStage = document.getElementById('intro-stage');
+		var countdownStage = document.getElementById('countdown-stage');
+		var countdownNumber = document.getElementById('countdown-number');
+		var launchBtn = document.getElementById('launch-btn');
+		var ringProgress = document.getElementById('ring-progress');
+		var segmentsBox = document.getElementById('segments');
+
+		var TOTAL = 10;
+		var RADIUS = 52;
+		var CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+
+		ringProgress.style.strokeDasharray = CIRCUMFERENCE;
+		ringProgress.style.strokeDashoffset = 0;
+
+		// build the wide segmented tracker
+		for (var i = 0; i < TOTAL; i++) {
+			var seg = document.createElement('div');
+			seg.className = 'segment';
+			seg.id = 'seg-' + i;
+			segmentsBox.appendChild(seg);
+		}
+
+		launchBtn.addEventListener('click', function () {
+			introStage.classList.add('hidden');
+			countdownStage.style.display = 'flex';
+			startCountdown(TOTAL);
+		});
+
+		function setRing(current) {
+			var fraction = current / TOTAL;
+			ringProgress.style.strokeDashoffset = CIRCUMFERENCE * (1 - fraction);
+		}
+
+		function fillSegments(current) {
+			var lit = TOTAL - current;
+			for (var i = 0; i < TOTAL; i++) {
+				var seg = document.getElementById('seg-' + i);
+				if (i < lit) seg.classList.add('filled');
+			}
+		}
+
+		function startCountdown(from) {
+			var current = from;
+			countdownNumber.textContent = current;
+			setRing(current);
+
+			var timer = setInterval(function () {
+				fillSegments(current);
+				current -= 1;
+
+				if (current <= 0) {
+					clearInterval(timer);
+					setRing(0);
+					fillSegments(0);
+					window.location.href = '2026/index.html';
+					return;
+				}
+
+				countdownNumber.textContent = current;
+				setRing(current);
+				countdownNumber.classList.remove('pulse');
+				void countdownNumber.offsetWidth;
+				countdownNumber.classList.add('pulse');
+			}, 1000);
+		}
+	</script>
+
+</body>
+
+</html>
