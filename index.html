@@ -606,7 +606,7 @@
 			<br>
 			<button class="launch-btn" id="launch-btn">LAUNCH</button>
 		</p>
-		<p class="hint">Click to begin the countdown and open the abstract flip book</p>
+		<!-- <p class="hint">Click to begin the countdown and open the abstract flip book</p> -->
 	</div>
 
 	<div class="stage countdown-wrap" id="countdown-stage">
@@ -630,7 +630,7 @@
 
 		<div class="segments" id="segments"></div>
 
-		<p class="countdown-caption">Opening the flip book automatically&hellip;</p>
+		<!-- <p class="countdown-caption">Opening the flip book automatically&hellip;</p> -->
 	</div>
 
 	<script>
@@ -679,9 +679,9 @@
 			var current = from;
 			countdownNumber.textContent = current;
 			setRing(current);
+			fillSegments(current);
 
 			var timer = setInterval(function () {
-				fillSegments(current);
 				current -= 1;
 
 				if (current <= 0) {
@@ -694,6 +694,7 @@
 
 				countdownNumber.textContent = current;
 				setRing(current);
+				fillSegments(current);
 				countdownNumber.classList.remove('pulse');
 				void countdownNumber.offsetWidth;
 				countdownNumber.classList.add('pulse');
